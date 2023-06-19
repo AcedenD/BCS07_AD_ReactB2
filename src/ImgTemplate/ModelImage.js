@@ -9,7 +9,10 @@ export default class ModelImage extends Component {
   renderGlasses = () => {
     return glassesArr.map((glasses, index) => {
       return (
-        <div className="col-2 col-lg-3" key={glasses.id}>
+        <div
+          className="d-flex justify-content-center col-2 col-lg-2"
+          key={glasses.id}
+        >
           <img
             style={{ width: 170 / 1.6, height: 70 / 1.6, cursor: "pointer" }}
             src={`./glasses/glassesImage/v${glasses.id}.png`}
@@ -28,8 +31,11 @@ export default class ModelImage extends Component {
 
   render() {
     return (
-      <div className="modelGlasses d-flex justify-content-center align-items-center py-5">
-        <div style={{ position: "relative" }} className="modelImg">
+      <div className="modelGlasses d-flex justify-content-center align-items-center py-5 bg-light flex-column">
+        <div
+          style={{ position: "relative" }}
+          className="modelImg d-flex justify-content-center pb-5"
+        >
           <img
             style={{
               width: 480 / 2,
@@ -54,7 +60,7 @@ export default class ModelImage extends Component {
             alt="glasses"
           />
         </div>
-        <div className="row g-5">{this.renderGlasses()}</div>
+        <div className="row g-5 ">{this.renderGlasses()}</div>
       </div>
     );
   }
